@@ -1,19 +1,15 @@
 def number_to_words(num)
   words = []
-  onesAndTweens = { 1 => "one", 2 => "two", 3 => "three", 4 => "four", 5 => "five", 6 => "six", 7 => "seven", 8 => "eight", 9 => "nine", 10 => "ten", 11 => "eleven", 12 => "twelve", 13 => "thirteen", 14 => "fourteen", 15 => "fifteen", 16 => "sixteen", 17 => "seventeen", 18 => "eighteen", 19 => "nineteen" }
-  tens = { 2 => "twenty", 3 => "thirty", 4 => "forty", 5 => "fifty", 6 => "sixty", 7 => "seventy", 8 => "eighty", 9 => "ninety" }
-  len = num.to_s.length
-  onesPlace = num.to_s.slice(-1).to_i
-  tensPlace = num.to_s.slice(-2).to_i
-  if num==0
-    words << 'zero'
-  elsif num>0 && num<20
-    words << onesAndTweens[num]
-  else
-    words.push(tens[tensPlace],onesAndTweens[onesPlace])
+  words << 'zero' if num == 0
+  hash = { 900 => "nine hundred", 800 => "eight hundred", 700 => "seven hundred", 600 => "six hundred", 500 => "five hundred", 400 => "four hundred", 300 => "three hundred", 200 => "two hundred", 100 => "one hundred", 90 => "ninety", 80 => "eighty", 70 => "seventy", 60 => "sixty", 50 => "fifty", 40 => "forty", 30 => "thirty", 20 => "twenty", 19 => "nineteen", 18 => "eighteen", 17 => "seventeen", 16 => "sixteen",  15 => "fifteen", 14 => "fourteen", 13 => "thirteen", 12 => "twelve", 11 => "eleven", 10 => "ten", 9 => "nine", 8 => "eight", 7 => "seven", 6 => "six", 5 => "five", 4 => "four",  3 => "three", 2 => "two", 1 => "one" }
+
+  hash.each do |k,v|
+    if num>=k
+      words << v
+      num -= k
+    end
   end
   words.join(" ")
-  #words.push(onesAndTweens[onesPlace.to_i])
 end
 
-puts number_to_words(25)
+puts number_to_words(0)

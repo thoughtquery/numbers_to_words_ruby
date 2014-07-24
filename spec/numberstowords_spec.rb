@@ -17,4 +17,13 @@ describe('number_to_words') do
   it("better convert 25 to 'twenty five") do
     expect(number_to_words(99)).to eq("ninety nine")
   end
+
+  it("better convert 299 to 'two hundred ninety nine'") do
+    expect(number_to_words(299)).to eq("two hundred ninety nine")
+  end
+
+
+  it("better convert 999 to 'nine hundred ninety nine'") do
+    expect(number_to_words(999)).to eq("nine hundred ninety nine")
+  end
 end
