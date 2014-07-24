@@ -43,4 +43,8 @@ describe('numbers_to_words') do
   it("better convert 14376477 to 'fourteen million three hundred seventy six thousand four hundred seventy seven'") do
     expect(numbers_to_words(14376477)).to eq("fourteen million three hundred seventy six thousand four hundred seventy seven")
   end
+
+  it("better convert 7145376477 to 'seven billion one hundred forty three million three hundred seventy six thousand four hundred seventy seven'") do
+    expect(numbers_to_words(7145376477)).to eq("seven billion one hundred forty five million three hundred seventy six thousand four hundred seventy seven")
+  end
 end

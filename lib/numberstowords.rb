@@ -21,23 +21,11 @@ def numbers_to_words(num)
     first = num%k
     result = hundreds_to_words(rem)
     if num>=k
-      #puts "num: #{num}"
-      #puts "rem: #{rem}"
-      #puts "first: #{first}"
-      #puts "k #{k}"
       words.push(result,v)
-      #num = first
       num -= (num/k)*k
       num = first
       words.push(hundreds_to_words(num)) if num<1000
-      #puts "num: #{num}"
-      #puts "first: #{first}"
-      #puts "result #{result}"
-      #puts "rem: #{rem}"
     end
-    #puts "words #{words}"
   end
   words.join(" ").strip
 end
-
-numbers_to_words(14376477)
