@@ -1,29 +1,42 @@
 require ('rspec')
 require ('numberstowords')
 
-describe('number_to_words') do
-  it("converts the number 0 to 'zero'") do
-    expect(number_to_words(0)).to (eq("zero"))
-  end
+describe('hundreds_to_words') do
+  #it("converts the number 0 to 'zero'") do
+  #  expect(hundreds_to_words(0)).to (eq("zero"))
+  #end
 
   it("better convert 5 to 'five") do
-    expect(number_to_words(5)).to eq("five")
+    expect(hundreds_to_words(5)).to eq("five")
   end
 
   it("better convert 25 to 'twenty five") do
-    expect(number_to_words(25)).to eq("twenty five")
+    expect(hundreds_to_words(25)).to eq("twenty five")
   end
 
   it("better convert 25 to 'twenty five") do
-    expect(number_to_words(99)).to eq("ninety nine")
+    expect(hundreds_to_words(99)).to eq("ninety nine")
   end
 
   it("better convert 299 to 'two hundred ninety nine'") do
-    expect(number_to_words(299)).to eq("two hundred ninety nine")
+    expect(hundreds_to_words(299)).to eq("two hundred ninety nine")
   end
 
-
   it("better convert 999 to 'nine hundred ninety nine'") do
-    expect(number_to_words(999)).to eq("nine hundred ninety nine")
+    expect(hundreds_to_words(999)).to eq("nine hundred ninety nine")
+  end
+end
+
+describe('numbers_to_words') do
+  it("better convert 7000 to 'seven thousand") do
+    expect(numbers_to_words(7000)).to eq("seven thousand")
+  end
+
+  it("better convert 186000 to 'one hundred eighty six thousand'") do
+    expect(numbers_to_words(186000)).to eq("one hundred eighty six thousand")
+  end
+
+  it("better convert 999586 to 'nine hundred ninety nine thousand five hundred eighty six'") do
+    expect(numbers_to_words(999586)).to eq("nine hundred ninety nine thousand five hundred eighty six")
   end
 end
